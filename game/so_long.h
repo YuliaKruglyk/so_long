@@ -6,7 +6,7 @@
 /*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 10:18:47 by ykruhlyk          #+#    #+#             */
-/*   Updated: 2022/08/02 10:39:18 by ykruhlyk         ###   ########.fr       */
+/*   Updated: 2022/08/01 17:23:52 by ykruhlyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include <stdarg.h> 
 
 typedef struct s_game
 {
@@ -98,29 +97,5 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
-
-int		ft_printf(const char *str, ...);
-int		ft_formats(va_list args, const char format);
-int		ft_charprint(int c);
-int		ft_strprint(char *str);
-int		ft_nbrprint(int n);
-int		ft_percprint(void);
-int		ft_ptrlen(uintptr_t ptr);
-int		ft_ptrprint(unsigned long long ptr);
-int		ft_nbrlen(unsigned int num);
-int		ft_unsdprint(unsigned int num);
-int		ft_hexlen(unsigned	int n);
-int		ft_hexprint(unsigned int n, const char format);
-char	*ft_unsd_itoa(unsigned int num);
-
-void	ft_putptr(uintptr_t p);
-void	ft_puthex(unsigned int n, const char format);
-void	putstr(char *str);
-
-int		ft_len(int n);
-int		ft_pos_neg(int n);
-char	*ft_null(int n, char *str);
-char	*ft_itoa(int n);
-void	ft_putchar_fd(char c, int fd);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 10:37:03 by ykruhlyk          #+#    #+#             */
-/*   Updated: 2022/08/02 10:36:50 by ykruhlyk         ###   ########.fr       */
+/*   Updated: 2022/08/01 12:36:24 by ykruhlyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	right(t_game *game)
 	if ((check_move(game, (i / 48), (j / 48)) != 1))
 	{
 		game->move++;
-		ft_printf(GREEN"Step = %d\n"ENDC, game->move);
+		printf(GREEN"Step = %d\n"ENDC, game->move);
 		update(game, j, i);
 		game->posy = i;
 		game->posx = j;

@@ -6,7 +6,7 @@
 #    By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/04 10:18:38 by ykruhlyk          #+#    #+#              #
-#    Updated: 2022/08/02 10:35:38 by ykruhlyk         ###   ########.fr        #
+#    Updated: 2022/08/01 17:22:17 by ykruhlyk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,11 +27,9 @@ X = "\033[0m"
 UP = "\033[A"
 CUT = "\033[K"
 
-CFILES = $(shell find . -name "*.c") 
+CFILES = $(shell find . -name "*.c")
 
-PCFILES = $(shell find ./printf -name "*.c")
-
-OBJECTS = $(CFILES:.c=.o) $(PCFILES:.c=.o)
+OBJECTS = $(CFILES:.c=.o)
 
 %.o : %.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
