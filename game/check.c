@@ -6,7 +6,7 @@
 /*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 16:58:25 by ykruhlyk          #+#    #+#             */
-/*   Updated: 2022/08/01 12:44:32 by ykruhlyk         ###   ########.fr       */
+/*   Updated: 2022/08/02 19:17:56 by ykruhlyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	check_map(t_game *game)
 	int	x;
 
 	y = 0;
-	while (game->map[y])
+	while (y < game->ysize / 48)
 	{
 		x = 0;
 		while (game->map[y][x])
@@ -73,14 +73,14 @@ void	check_game(t_game *game)
 	int	x;
 
 	y = 0;
-	while (game->map[y])
+	while (y < game->ysize / 48)
 	{
 		x = 0;
 		while (game->map[y][x])
 		{
-			if (game->map[y][x] == 'C')
+			if (game->map[y][x] && game->map[y][x] == 'C')
 					game->check_collect++;
-			if (game->map[y][x] == 'P')
+			if (game->map[y][x] && game->map[y][x] == 'P')
 			{
 				game->posx = x * SIZE;
 				game->posy = y * SIZE;
@@ -90,6 +90,7 @@ void	check_game(t_game *game)
 		}
 		y++;
 	}
+
 	check_map(game);
 	check_wall(game);
 }

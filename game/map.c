@@ -6,7 +6,7 @@
 /*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 20:17:15 by ykruhlyk          #+#    #+#             */
-/*   Updated: 2022/08/01 17:27:55 by ykruhlyk         ###   ########.fr       */
+/*   Updated: 2022/08/02 19:23:00 by ykruhlyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ void	map_build(t_game *game, int i)
 
 	image.wlx = *game;
 	j = 0;
-	while (game->map[i])
+	// while (game->map[i])
+	// {
+	while (game->map[i][j])
 	{
-		while (game->map[i][j])
-		{
-			map = set_texture(game->map[i][j]);
-			image.path = map.path;
-			img_put(image, (j * SIZE), (i * SIZE));
-			j++;
-		}
-		i++;
+		map = set_texture(game->map[i][j]);
+		image.path = map.path;
+		img_put(image, (j * SIZE), (i * SIZE));
+		j++;
 	}
+		// i++;
+	// }
 }
 
 void	background_build(t_game game, int i)
@@ -44,8 +44,9 @@ void	background_build(t_game game, int i)
 		error(RED"The map is not rectangularn"ENDC, &game);
 	if (game.map[(game.ysize / 48)] && game.map[(game.ysize / 48)][0] != '\0')
 		error(RED"Wrong Map\n"ENDC, &game);
-	while (game.map[i])
-	{
+
+	// while (game.map[i])
+	// {
 		j = 0;
 		while (game.map[i][j])
 		{
@@ -55,8 +56,9 @@ void	background_build(t_game game, int i)
 			img_put(image, (j * SIZE), (i * SIZE));
 			j++;
 		}
-		i++;
-	}
+		
+		// i++;
+	// }
 }
 
 void	maplen(char *line, t_game *game, int i)
@@ -67,9 +69,10 @@ void	maplen(char *line, t_game *game, int i)
 	image.wlx = *game;
 	j = 0;
 	if (line[ft_strlen(line - 1) == '\n'])
-		game->map[i] = calloc(ft_strlen(line), sizeof(char));
+		game->map[i] = ft_calloc(ft_strlen(line), sizeof(char));
 	else
-		game->map[i] = calloc(ft_strlen(line) + 1, sizeof(char));
+		game->map[i] = ft_calloc(ft_strlen(line) + 1, sizeof(char));
+	
 	while (line[j])
 	{
 		if (line[j] == '\n')
@@ -77,6 +80,7 @@ void	maplen(char *line, t_game *game, int i)
 		game->map[i][j] = line[j];
 		j++;
 	}
+	
 	if (line[0])
 		free (line);
 	background_build(*game, i);
@@ -89,7 +93,7 @@ void	map_gnl(t_game *game, char **argv)
 	char	*line;
 	int		i;
 
-	game->map = calloc(game->ysize / 48 + 1, sizeof(char *));
+	game->map = ft_calloc((game->ysize / 48) + 1, sizeof(char *));
 	fd = open(argv[1], O_RDONLY);
 	i = 0;
 	while (i <= game->ysize / 48)
@@ -108,7 +112,7 @@ void	map_destroy(t_game	*game)
 	int	y;
 
 	y = 0;
-	while (game->map[y])
+	while (y < game->ysize / 48)
 	{
 		free(game->map[y]);
 		y++;
