@@ -6,7 +6,7 @@
 /*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 10:18:47 by ykruhlyk          #+#    #+#             */
-/*   Updated: 2022/08/01 17:23:52 by ykruhlyk         ###   ########.fr       */
+/*   Updated: 2022/08/02 09:58:31 by ykruhlyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define SIZE   48
 
 # include <mlx.h>
-// # include "../libft/libft.h"
+# include "../libft/libft.h"
 
 # include <fcntl.h>
 # include <unistd.h>

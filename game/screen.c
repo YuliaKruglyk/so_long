@@ -6,11 +6,12 @@
 /*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 11:05:46 by ykruhlyk          #+#    #+#             */
-/*   Updated: 2022/08/01 12:47:09 by ykruhlyk         ###   ########.fr       */
+/*   Updated: 2022/08/02 10:01:27 by ykruhlyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+# include "../libft/libft.h"
 
 int	linelen(int fd)
 {
