@@ -6,7 +6,7 @@
 /*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 16:58:25 by ykruhlyk          #+#    #+#             */
-/*   Updated: 2022/08/02 19:33:17 by ykruhlyk         ###   ########.fr       */
+/*   Updated: 2022/08/01 17:33:40 by ykruhlyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	check_map(t_game *game)
 	int	x;
 
 	y = 0;
-	while (y < game->ysize / 48)
+	while (game->map[y])
 	{
 		x = 0;
 		while (game->map[y][x])
@@ -77,7 +77,7 @@ void	check_game(t_game *game)
 	int	x;
 
 	y = 0;
-	while (y < game->ysize / 48)
+	while (game->map[y])
 	{
 		x = 0;
 		while (game->map[y][x])
